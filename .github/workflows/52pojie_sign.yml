@@ -21,20 +21,17 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-    - name: 签到
+    - name: 配置python
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-           
-        
-        cookie='${{ secrets.COOKIE }}'
-        SCKEY='${{ secrets.SCKEY }}'      
+    - name: 签到       
+      env:  |
+        cookie: ${{ secrets.COOKIE }
+        SCKEY: ${{ secrets.SCKEY }}     
                       
-        IFS="#"
-              
-        echo "即将开始签到"        
-        
+      run:     
+        echo "即将开始签到"       
         python3 52pojie_sign.py 
-        ${cookie}
-        ${SCKEY}
+        
        
