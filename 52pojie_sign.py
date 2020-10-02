@@ -9,8 +9,8 @@ url = 'https://www.52pojie.cn/home.php?mod=task&do=draw&id=2'
 url1 = 'https://www.52pojie.cn/home.php?mod=task&do=apply&id=2'
 headers = {
            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4265.0 Safari/537.36 Edg/87.0.644.4'}
-requests.get(url1, headers=headers)
-req = requests.get(url, headers=headers,cookie=cookie).text
+requests.get(url1, headers=headers,cookies=cookie)
+req = requests.get(url, headers=headers,cookies=cookie).text
     
 doc = pq(req)
 msg = doc('.vwmy a').text() + '\t' + doc('#messagetext p').text()
