@@ -1,0 +1,41 @@
+name: 52pojie_sign
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron:  1 0 * * * 
+  watch:
+    types: started
+  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: 签到
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+           
+        
+        cookie='${{ secrets.COOKIE }}'
+        SCKEY='${{ secrets.SCKEY }}'      
+                      
+        IFS="#"
+              
+        echo "即将开始签到"        
+        
+        python3 uiwow_register.py <<EOF
+        ${cookie}
+        ${SCKEY}
+        EOF
+        
