@@ -27,7 +27,7 @@ jobs:
         pip install -r requirements.txt
     - name: 签到       
       env:  |
-        cookie: ${{ secrets.COOKIE }
+        cookie: ${{ secrets.COOKIE }}
         SCKEY: ${{ secrets.SCKEY }}     
                       
       run:     
