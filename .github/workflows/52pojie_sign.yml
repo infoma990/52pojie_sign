@@ -27,21 +27,13 @@ jobs:
         pip install -r requirements.txt
     - name: 签到       
       run: |
-        cookie= ${{ secrets.COOKIE }}
-        SCKEY=${{ secrets.SCKEY }}  
+        cookie= '${{ secrets.COOKIE }}'
+        SCKEY='${{ secrets.SCKEY }}'
         
-        cookie_list = ()
-        IFS="#"
-        
-        for u in ${cookie[*]}
-        do 
-        cookie_list[${#cookie_list[*]}]=${u}
-        done
-        cookie_num=${#cookie_list[*]}
-        
-        for ((i=0;i<$cookie_num;i++))
+       
+       
         python 52pojie_sign.py <<EOF
-        ${cookie_list[$i]}
+        ${cookie}
         ${SCKEY}
         EOF
        
