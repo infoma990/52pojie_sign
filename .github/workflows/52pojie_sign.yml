@@ -34,7 +34,7 @@ jobs:
               
         echo "即将开始签到"        
         
-        python3 uiwow_register.py <<EOF
+        python3 52pojie_sign.py <<EOF
         ${cookie}
         ${SCKEY}
         EOF
