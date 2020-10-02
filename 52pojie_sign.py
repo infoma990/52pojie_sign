@@ -2,7 +2,8 @@
 import requests
 from pyquery import PyQuery as pq
 
-
+cookie=''
+sckey=""
 cookie = input("cookie")
 sckey = input("sckey")
 url = 'https://www.52pojie.cn/home.php?mod=task&do=draw&id=2'
