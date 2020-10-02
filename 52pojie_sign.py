@@ -14,6 +14,8 @@ def main():
     doc = pq(req)
     msg = doc('.vwmy a').text() + '\t' + doc('#messagetext p').text()
     print(msg)
+    if not cookie:
+        print('cookie为空')
     if sckey:
         send_url = f'https://sc.ftqq.com/{sckey}.send?text={msg}'
         requests.get(send_url)
