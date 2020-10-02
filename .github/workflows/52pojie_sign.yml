@@ -26,12 +26,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: 签到       
-      env:  
-        cookie: ${{ secrets.COOKIE }}
-        SCKEY: ${{ secrets.SCKEY }}     
+      run: |
+        cookie= ${{ secrets.COOKIE }}
+        SCKEY=${{ secrets.SCKEY }}     
                       
-      run:     
+         
           
-        python 52pojie_sign.py 
-        
+        python 52pojie_sign.py <<EOF
+        ${cookie}
+        ${SCKEY}
+        EOF
        
