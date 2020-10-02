@@ -28,9 +28,7 @@ jobs:
     - name: 签到       
       run: |
         cookie= ${{ secrets.COOKIE }}
-        SCKEY=${{ secrets.SCKEY }}     
-                      
-        IFS="#" 
+        SCKEY=${{ secrets.SCKEY }}  
           
         python 52pojie_sign.py <<EOF
         ${cookie}
