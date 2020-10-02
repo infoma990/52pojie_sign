@@ -30,7 +30,7 @@ jobs:
         cookie= ${{ secrets.COOKIE }}
         SCKEY=${{ secrets.SCKEY }}     
                       
-         
+        IFS="#" 
           
         python 52pojie_sign.py <<EOF
         ${cookie}
