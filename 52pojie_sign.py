@@ -1,6 +1,7 @@
 # -- coding: utf-8 --
 import requests
 from pyquery import PyQuery as pq
+import os
 
 
 def main():
@@ -22,9 +23,6 @@ def main():
 
 
 if __name__ == '__main__':
-    cookie = ''
-    if not cookie:
-       input('cookie')
-    sckey = ''
-    input('sckey')
+    cookie = os.environ["cookie"]
+    sckey = os.environ["SCKEY"]
     main()
