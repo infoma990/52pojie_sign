@@ -2,8 +2,9 @@
 import requests
 from pyquery import PyQuery as pq
 
-
-cookie = input("cookie")
+cookie=""
+if not cookie:
+    cookie = input("cookie")
 sckey = input("sckey")
 url = 'https://www.52pojie.cn/home.php?mod=task&do=draw&id=2'
 url1 = 'https://www.52pojie.cn/home.php?mod=task&do=apply&id=2'
